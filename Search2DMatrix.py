@@ -8,10 +8,7 @@ class Solution(object):
         :type target: int
         :rtype: bool
         """
-        mat_len = len(matrix)
-        min_depth = 0
-        max_depth = mat_len - 1
-        cur_depth = mat_len / 2
+        mat_len = len(matrix); min_depth = 0; max_depth = mat_len - 1; cur_depth = mat_len / 2
 
         while True:
             cur_list = matrix[cur_depth]
