@@ -21,7 +21,9 @@ public class PreorderTraversal {
     }
 
     public static List<Integer> preorderTraversal(TreeNode root) {
-        if (root == null) { return new ArrayList<>();}
+        if (root == null) {
+            return new ArrayList<>();
+        }
         List<Integer> list = new ArrayList<>();
         LinkedList<TreeNode> queue = new LinkedList<>();
         TreeNode copy = root;
@@ -53,7 +55,9 @@ public class PreorderTraversal {
     }
 
     private static List<Integer> traverse(TreeNode root, List<Integer> list) {
-        if (root == null) { return new ArrayList<>();}
+        if (root == null) {
+            return new ArrayList<>();
+        }
 
 
         traverse(root.left, list);

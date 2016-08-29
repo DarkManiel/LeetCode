@@ -1,6 +1,3 @@
-import sun.awt.image.ImageWatched;
-
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -46,7 +43,9 @@ public class MinimumDepthOfBinaryTree {
     }
 
     public static int getMinDepth(TreeNode root) {
-        if (root == null) { return 0; }
+        if (root == null) {
+            return 0;
+        }
 
         int minDepth = 1;
         LinkedList<TreeNode> current = new LinkedList<>();
@@ -69,7 +68,7 @@ public class MinimumDepthOfBinaryTree {
             }
 
             if (current.isEmpty()) {
-                minDepth ++;
+                minDepth++;
                 current = next;
                 next = new LinkedList<>();
             }

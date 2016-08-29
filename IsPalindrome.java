@@ -1,5 +1,3 @@
-import java.util.List;
-
 /**
  * Created by markdaniel on 8/28/15.
  */
@@ -16,19 +14,23 @@ public class IsPalindrome {
     }
 
     public static boolean isPalindrome(ListNode head) {
-        if (head == null) { return true;}
-        if (head.next == null) { return true;}
+        if (head == null) {
+            return true;
+        }
+        if (head.next == null) {
+            return true;
+        }
         ListNode lag = head;
         ListNode ref = head;
 
         int len = 0;
         while (head != null) {
             head = head.next;
-            len ++;
+            len++;
         }
 
         ListNode firstHalf = null;
-        for (int i = 0; i < len / 2; i ++) {
+        for (int i = 0; i < len / 2; i++) {
             ListNode temp = new ListNode(lag.val);
             temp.next = firstHalf;
             firstHalf = temp;

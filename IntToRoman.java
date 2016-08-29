@@ -5,12 +5,13 @@ public class IntToRoman {
     public static void main(String[] args) {
         System.out.printf(intToRoman(19));
     }
+
     public static String intToRoman(int num) {
         StringBuilder sb = new StringBuilder();
 
         if (num >= 1000) {
-            for (int i = 0; i < num / 1000; i ++ ){
-                    sb.append("M");
+            for (int i = 0; i < num / 1000; i++) {
+                sb.append("M");
             }
             num = num % 1000;
         }
@@ -27,7 +28,7 @@ public class IntToRoman {
             num %= 500;
         }
         if (num >= 100) {
-            for (int j = 0; j < num / 100; j ++ ) {
+            for (int j = 0; j < num / 100; j++) {
                 sb.append("C");
             }
             num %= 100;
@@ -36,16 +37,16 @@ public class IntToRoman {
             sb.append("XC");
             num %= 90;
         }
-        if (num >=40 && num < 50) {
+        if (num >= 40 && num < 50) {
             sb.append("XL");
             num %= 40;
         }
-        if (num >= 50){
+        if (num >= 50) {
             sb.append("L");
             num %= 50;
         }
         if (num >= 10) {
-            for (int k= 0; k <num / 10; k ++) {
+            for (int k = 0; k < num / 10; k++) {
                 sb.append("X");
             }
             num %= 10;
@@ -61,7 +62,7 @@ public class IntToRoman {
         if (num >= 1 && num == 4) {
             sb.append("IV");
         } else {
-            for (int l = 0; l < num; l ++) {
+            for (int l = 0; l < num; l++) {
                 sb.append("I");
             }
         }

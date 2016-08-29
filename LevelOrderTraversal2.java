@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -44,7 +43,9 @@ public class LevelOrderTraversal2 {
     }
 
     public static List<List<Integer>> lot(TreeNode root) {
-        if (root == null) { return new ArrayList<>(); }
+        if (root == null) {
+            return new ArrayList<>();
+        }
         List<List<Integer>> res = new ArrayList<>();
         Stack<List<Integer>> runningList = new Stack<>();
 

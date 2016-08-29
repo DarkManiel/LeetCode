@@ -4,7 +4,7 @@
 public class SearchRange {
     public static void main(String[] args) {
 //        int[] nums = {5, 7, 7, 8, 8, 10};
-        int [] nums = {1};
+        int[] nums = {1};
         int[] res = searchRange(nums, 0);
         System.out.println("ANSWER: " + res[0] + " " + res[1]);
     }
@@ -14,7 +14,7 @@ public class SearchRange {
             return new int[]{-1, -1};
         }
         if (nums.length == 1) {
-            return (nums[0] == target) ? new int[]{0,0} : new int[]{-1,-1};
+            return (nums[0] == target) ? new int[]{0, 0} : new int[]{-1, -1};
         }
         return binarySearch(nums, target, 0, nums.length - 1);
     }
@@ -24,12 +24,12 @@ public class SearchRange {
             if (nums[lo] == target) {
                 return new int[]{lo, hi};
             } else {
-                return new int[]{-1,-1};
+                return new int[]{-1, -1};
             }
         }
-        int[] result = {-1,-1};
+        int[] result = {-1, -1};
 
-        int[] leftResult = {-1,-1};
+        int[] leftResult = {-1, -1};
         int leftMid = (hi - lo) / 2 + lo;
         int rightMid = (hi - lo) / 2 + lo + 1;
         if (nums[leftMid] == target) {
@@ -46,7 +46,7 @@ public class SearchRange {
                 result[0] = index + 1;
             }
             result[1] = leftMid;
-        } else if (nums[leftMid] > target){
+        } else if (nums[leftMid] > target) {
 
             leftResult = binarySearch(nums, target, lo, leftMid);
             if (leftResult[0] != -1) {
@@ -65,10 +65,12 @@ public class SearchRange {
                 index++;
             }
             if (!foundEndpoint) {
-                result[1] = index -1;
+                result[1] = index - 1;
             }
-            if (result[0] == -1) {result[0] = rightMid;}
-        } else if (result[1] == -1 && nums[rightMid] < target){
+            if (result[0] == -1) {
+                result[0] = rightMid;
+            }
+        } else if (result[1] == -1 && nums[rightMid] < target) {
             int[] rightResult = binarySearch(nums, target, rightMid, hi);
             if (rightResult[1] != -1) {
                 result[1] = rightResult[1];

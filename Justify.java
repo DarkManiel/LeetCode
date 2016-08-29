@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * Created by markdaniel on 6/20/16.
  */
@@ -11,7 +9,7 @@ public class Justify {
         wordLine = wordLine.replace("\"", "").replace(" ", "");
         wordLine = wordLine.replace(" ", "");
 
-        String [] words = wordLine.split(",");
+        String[] words = wordLine.split(",");
         int lineLen = sc.nextInt();
 
         System.out.println(fullJustify(words, lineLen));
@@ -38,11 +36,11 @@ public class Justify {
                 if (offset <= maxWidth) {
                     // Add to current line, but must increm curLine since we're at the edge.
                     addWord(lines, curLine, curWord);
-                    curLine ++;
+                    curLine++;
                     currentLineOffset = 0;
                 } else {
                     // No space for this word, so must add to next line.
-                    curLine ++;
+                    curLine++;
                     addWord(lines, curLine, curWord);
                     currentLineOffset = curWord.length() + 1;
                 }
@@ -65,12 +63,12 @@ public class Justify {
 
             if (index == lines.size() - 1) {
                 // Handling left alignment for last line
-                for (int i = 0; i < list.size(); i ++) {
+                for (int i = 0; i < list.size(); i++) {
                     sb.append((i == 0) ? list.get(i) : " " + list.get(i));
                 }
 
                 int widToAdd = maxWidth - sb.length();
-                for (int i = 0; i < widToAdd; i ++) {
+                for (int i = 0; i < widToAdd; i++) {
                     sb.append(" ");
                 }
             } else {
@@ -87,29 +85,29 @@ public class Justify {
                 baseAddition /= ((wordNum - 1) > 0) ? (wordNum - 1) : 1;
 
 
-                for (int i = 0; i < list.size() - 1; i ++) {
+                for (int i = 0; i < list.size() - 1; i++) {
                     sb.append(list.get(i));
-                    for (int j = 0; j < baseAddition; j ++) {
+                    for (int j = 0; j < baseAddition; j++) {
                         sb.append(" ");
                     }
                     sb.append((excess > 0) ? " " : "");
-                    excess --;
+                    excess--;
                 }
 
                 sb.append(list.get(list.size() - 1));
 
                 if (list.size() == 1) {
-                    for (int j = 0; j < baseAddition; j ++) {
+                    for (int j = 0; j < baseAddition; j++) {
                         sb.append(" ");
                     }
                 }
             }
 
             res.add(sb.toString());
-            index ++;
+            index++;
         }
 
-        return  res;
+        return res;
     }
 
     public static void addWord(List<List<String>> lines, int curLine, String curWord) {

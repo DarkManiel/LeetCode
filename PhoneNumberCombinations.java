@@ -7,10 +7,11 @@ import java.util.List;
 public class PhoneNumberCombinations {
     public static void main(String[] args) {
         List<String> combos = letterCombinations("23");
-        for (String s: combos) {
+        for (String s : combos) {
             System.out.println(s + " ");
         }
     }
+
     public static List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         List<String> dictionary = new ArrayList<>();
@@ -29,12 +30,13 @@ public class PhoneNumberCombinations {
         return result;
     }
 
-    public static  List<String> helper(List<String> list, String digits, List<String> dictionary) {
+    public static List<String> helper(List<String> list, String digits, List<String> dictionary) {
         if (digits.length() > 0) {
             int target = Integer.parseInt("" + digits.charAt(0));
             String letters = dictionary.get(target);
-            List<String> tempList = new ArrayList<>();;
-            for (int i = 0; i < letters.length(); i ++) {
+            List<String> tempList = new ArrayList<>();
+            ;
+            for (int i = 0; i < letters.length(); i++) {
                 if (list.size() == 0) {
                     tempList.add("" + letters.charAt(i));
                 } else {

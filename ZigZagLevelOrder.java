@@ -1,5 +1,3 @@
-import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -25,7 +23,9 @@ public class ZigZagLevelOrder {
     }
 
     public static List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        if (root == null) { return new ArrayList<>(); }
+        if (root == null) {
+            return new ArrayList<>();
+        }
         List<List<Integer>> levelOrderTree = new ArrayList<>();
         List<Integer> innerList = new ArrayList<>();
         Stack<TreeNode> oddLevel = new Stack<>();
@@ -86,7 +86,6 @@ public class ZigZagLevelOrder {
             addChildIndex += 2;
         }
     }
-
 
 
     public static class TreeNode {

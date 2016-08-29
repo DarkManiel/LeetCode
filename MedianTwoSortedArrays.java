@@ -22,33 +22,33 @@ public class MedianTwoSortedArrays {
 
             if (i >= nums1Length) {
                 combined[currentIndex] = nums2J;
-                currentIndex ++;
-                j ++;
-            } else if (j >= nums2Length){
+                currentIndex++;
+                j++;
+            } else if (j >= nums2Length) {
                 combined[currentIndex] = nums1I;
-                currentIndex ++;
-                i ++;
+                currentIndex++;
+                i++;
             } else {
-                if ( nums1I < nums2J) {
+                if (nums1I < nums2J) {
                     combined[currentIndex] = nums1I;
-                    currentIndex ++;
-                    i ++;
+                    currentIndex++;
+                    i++;
                 } else if (nums1I > nums2J) {
                     combined[currentIndex] = nums2J;
-                    currentIndex ++;
-                    j ++;
+                    currentIndex++;
+                    j++;
                 } else {
                     // equal
                     combined[currentIndex] = nums1I;
-                    currentIndex ++;
+                    currentIndex++;
                     combined[currentIndex] = nums2J;
-                    currentIndex ++;
-                    i ++;
-                    j ++;
+                    currentIndex++;
+                    i++;
+                    j++;
                 }
             }
         }
-        for (int in : combined){
+        for (int in : combined) {
             System.out.println(in);
         }
         return calculateMedian(combined);
@@ -56,7 +56,7 @@ public class MedianTwoSortedArrays {
 
     private static double calculateMedian(int[] nums) {
         double median = 0;
-        if (nums == null || nums.length == 0 ) {
+        if (nums == null || nums.length == 0) {
             return 0;
         }
         if (nums.length % 2 == 0) {

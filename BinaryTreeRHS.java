@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by markdaniel on 8/7/16.
@@ -20,7 +19,9 @@ public class BinaryTreeRHS {
 
     public static List<Integer> rightHandSideView(TreeNode root) {
         List<Integer> rightHandNums = new ArrayList<>();
-        if (root == null) { return rightHandNums; }
+        if (root == null) {
+            return rightHandNums;
+        }
 
         LinkedList<TreeNode> current = new LinkedList<>();
         LinkedList<TreeNode> next = new LinkedList<>();

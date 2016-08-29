@@ -1,13 +1,9 @@
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Created by markdaniel on 8/21/15.
  */
 public class NumIslands {
     public static void main(String[] args) {
-        char[][] grid = {{'1', '1','0','0','0'}, {'1','1','0','0','0'}, {'0','0','1','0','0'}, {'0','0','0','1','1'}};
+        char[][] grid = {{'1', '1', '0', '0', '0'}, {'1', '1', '0', '0', '0'}, {'0', '0', '1', '0', '0'}, {'0', '0', '0', '1', '1'}};
         System.out.println("result is " + numIslands(grid));
     }
 
@@ -19,11 +15,11 @@ public class NumIslands {
         int result = 0;
         int[][] historyMap = new int[grid.length][grid[0].length];
 
-        for (int i = 0; i < grid.length; i ++) {
-            for (int j = 0; j < grid[0].length; j ++) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
                 if (historyMap[i][j] == 0 && grid[i][j] == '1') {
                     mapIsland(grid, historyMap, i, j);
-                    result ++;
+                    result++;
                 }
             }
         }
@@ -47,8 +43,8 @@ public class NumIslands {
 
     private static void printGrid(char[][] grid) {
         System.out.print("\n");
-        for (int i = 0; i < grid.length; i ++) {
-            for (int j = 0; j < grid[0].length; j ++) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
                 System.out.print(grid[i][j]);
             }
             System.out.print("\n");
@@ -57,8 +53,8 @@ public class NumIslands {
 
     private static void printMap(int[][] grid) {
         System.out.print("\n");
-        for (int i = 0; i < grid.length; i ++) {
-            for (int j = 0; j < grid[0].length; j ++) {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
                 System.out.print(grid[i][j]);
             }
             System.out.print("\n");

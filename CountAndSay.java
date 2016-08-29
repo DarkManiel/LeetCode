@@ -13,18 +13,20 @@ public class CountAndSay {
         newSet.append(curSet);
         while (index < n) {
             newSet = new StringBuilder();
-            for (int i = 0; i < curSet.length(); i ++) {
+            for (int i = 0; i < curSet.length(); i++) {
                 int countSame = 0;
                 char targetChar = curSet.charAt(i);
                 while (i < curSet.length() && curSet.charAt(i) == targetChar) {
-                    countSame ++;
-                    i ++;
+                    countSame++;
+                    i++;
                 }
-                if (i < curSet.length()) { i --;}
+                if (i < curSet.length()) {
+                    i--;
+                }
                 newSet.append("" + countSame + targetChar);
             }
             curSet = newSet.toString();
-            index ++;
+            index++;
         }
         return newSet.toString();
     }

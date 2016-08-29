@@ -16,7 +16,7 @@ public class Isomorphic {
     public static boolean isIsomorphic(String s, String t) {
         Set<Character> mapped = new HashSet<>();
         Map<Character, Character> map = new HashMap<>();
-        for (int i = 0; i < s.length(); i ++) {
+        for (int i = 0; i < s.length(); i++) {
             char sChar = s.charAt(i);
             char tChar = t.charAt(i);
 
@@ -25,10 +25,10 @@ public class Isomorphic {
                     return false;
                 }
             } else if (mapped.contains(tChar)) {
-                return  false;
+                return false;
             } else {
-                    map.put(sChar, tChar);
-                    mapped.add(tChar);
+                map.put(sChar, tChar);
+                mapped.add(tChar);
             }
         }
         return true;

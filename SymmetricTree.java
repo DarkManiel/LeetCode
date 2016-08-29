@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -41,8 +40,12 @@ public class SymmetricTree {
     }
 
     public static boolean isMirrorImage(TreeNode root) {
-        if (root == null) { return true; }
-        if (root.left == null || root.right == null) { return root.left == null && root.right == null; }
+        if (root == null) {
+            return true;
+        }
+        if (root.left == null || root.right == null) {
+            return root.left == null && root.right == null;
+        }
         int curRowSize = 1;
         int curRowIndex = 0;
         int nextRowSize = 2;

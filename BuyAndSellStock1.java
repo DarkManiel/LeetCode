@@ -14,7 +14,7 @@ public class BuyAndSellStock1 {
         int index = 0;
         for (String s : numbers.split(",")) {
             prices[index] = Integer.parseInt(s);
-            index ++;
+            index++;
         }
 
         System.out.println(maxProfit(prices));
@@ -34,7 +34,7 @@ public class BuyAndSellStock1 {
 
         do {
             skippedAhead = false;
-            for (int lead = lag + 1; lead < len; lead ++) {
+            for (int lead = lag + 1; lead < len; lead++) {
                 if (prices[lead] < prices[lag]) {
                     lag = lead;
                     dp[lead] = dp[lead - 1];
@@ -47,7 +47,7 @@ public class BuyAndSellStock1 {
                     dp[lead] = Math.max(dp[lead - 1], dp[lead]);
                 }
             }
-         } while (skippedAhead);
+        } while (skippedAhead);
 
         return dp[len - 1];
     }

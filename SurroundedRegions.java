@@ -1,5 +1,3 @@
-import java.awt.*;
-import java.util.*;
 import java.util.List;
 
 /**
@@ -25,17 +23,19 @@ public class SurroundedRegions {
     }
 
     public static void solve(char[][] board) {
-        if (board == null || board.length <= 2 || board[0].length <= 2) { return; }
+        if (board == null || board.length <= 2 || board[0].length <= 2) {
+            return;
+        }
         int rows = board.length;
         int cols = board[0].length;
 
-        int dY[] = new int[] {0, rows - 1};
-        int dX[] = new int[] {0, cols - 1};
+        int dY[] = new int[]{0, rows - 1};
+        int dX[] = new int[]{0, cols - 1};
         int dLen = 2;
 
         // Check top and bottom rows
-        for (int i = 0; i < dLen; i ++) {
-            for (int j = 0; j < cols; j ++) {
+        for (int i = 0; i < dLen; i++) {
+            for (int j = 0; j < cols; j++) {
                 if (board[dY[i]][j] == 'O') {
                     bfs(board, dY[i], j);
                 }
@@ -43,16 +43,16 @@ public class SurroundedRegions {
         }
 
         // Check left and right cols
-        for (int i = 0; i < dLen; i ++) {
-            for (int j = 0; j < rows; j ++) {
+        for (int i = 0; i < dLen; i++) {
+            for (int j = 0; j < rows; j++) {
                 if (board[j][dX[i]] == 'O') {
                     bfs(board, j, dX[i]);
                 }
             }
         }
 
-        for (int i = 1; i < rows - 1; i ++) {
-            for (int j = 1; j < cols - 1; j ++) {
+        for (int i = 1; i < rows - 1; i++) {
+            for (int j = 1; j < cols - 1; j++) {
                 if (board[i][j] == 'O') {
                     board[i][j] = 'X';
                 } else if (board[i][j] == 'P') {
@@ -74,7 +74,7 @@ public class SurroundedRegions {
         while (!queue.isEmpty()) {
             Point point = queue.pop();
 
-            for (int i = 0; i < dLen; i ++) {
+            for (int i = 0; i < dLen; i++) {
                 // Need to invoke point.x as the first arg, even though we're using that as Y = row val
                 int yVal = point.x + dY[i];
                 int xVal = point.y + dX[i];

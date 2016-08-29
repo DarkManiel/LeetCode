@@ -1,4 +1,3 @@
-import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -6,31 +5,6 @@ import java.util.stream.Collectors;
  */
 public class CloneGraph {
     public static void main(String[] args) {
-//        UndirectedGraphNode node1 = new UndirectedGraphNode(0);
-////        UndirectedGraphNode node2 = new UndirectedGraphNode(0);
-////        UndirectedGraphNode node3 = new UndirectedGraphNode(0);
-//        node1.neighbors.add(node1);
-//        node1.neighbors.add(node1);
-
-//        UndirectedGraphNode node1 = new UndirectedGraphNode(1);
-//        UndirectedGraphNode node2 = new UndirectedGraphNode(2);
-//        UndirectedGraphNode node3 = new UndirectedGraphNode(3);
-//        List<UndirectedGraphNode> node1Neighbors = new ArrayList<>();
-//        node1Neighbors.add(node2);
-//        node1Neighbors.add(node3);
-//        node1.neighbors = node1Neighbors;
-//        List<UndirectedGraphNode> node2Neighbors = new ArrayList<>();
-//        node2Neighbors.add(node3);
-//        node2.neighbors = node2Neighbors;
-//        List<UndirectedGraphNode> node3Neighbors = new ArrayList<>();
-//        node3Neighbors.add(node3);
-//        node3.neighbors = node3Neighbors;
-
-//        UndirectedGraphNode dolly = cloneGraph(node1);
-//
-//        System.out.println(dolly);
-//
-//
         Scanner sc = new Scanner(System.in);
 
 
@@ -46,7 +20,7 @@ public class CloneGraph {
             nodeList.add(newNode);
         }
 
-        for (int i = 0; i < nodes.size(); i ++) {
+        for (int i = 0; i < nodes.size(); i++) {
             List<Integer> node = nodes.get(i);
             UndirectedGraphNode nodeRep = nodeList.get(i);
             for (Integer j : node.subList(1, node.size())) {
